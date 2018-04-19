@@ -19,4 +19,4 @@ Other things to consider
   * Encapsulation where appropriate
   
   Poker Hands
-  ![https://i.pinimg.com/originals/25/1b/7f/251b7fec75bbd621e06eeae9b35fbb87.png](https://i.pinimg.com/originals/25/1b/7f/251b7fec75bbd621e06eeae9b35fbb87.png)
+  ![https://www.fgbradleys.com/images/poker_hands.gif](https://www.fgbradleys.com/images/poker_hands.gif)
