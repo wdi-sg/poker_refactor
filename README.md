@@ -18,5 +18,18 @@ Other things to consider
   * Consistency
   * Encapsulation where appropriate
   
+ #### Running the code
+  ```
+  gem install rspec
+  ```
+  cd into the directory
+  ```
+  cd starter
+  ```
+  Run it.
+  ```
+  rspec
+  ```
+  
 #### Poker Hands
 ![https://www.fgbradleys.com/images/poker_hands.gif](https://www.fgbradleys.com/images/poker_hands.gif)
