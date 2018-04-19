@@ -24,7 +24,7 @@ class Hand
   # store the result of values in a variable to avoid running the values method more than once
   def straight?
     tmp = values
-    tmp.last - tmp.first == 4
+    tmp.last - tmp.first == 4 || tmp == [1, 10, 11, 12, 13]
   end
 
   # Ignore royal, straight, etc. Just check for the presence of only 1 suit.
@@ -43,7 +43,7 @@ class Hand
   end
 
   def best_hand
-    highest_value = values[-2]
+    highest_value = values[-1]
     (straight? && flush? && highest_value == 13) ? 'Royal Flush'
     : (straight? && flush?) ? 'Straight Flush'
     : (four_of_a_kind?) ? 'Four of a Kind'
@@ -53,8 +53,6 @@ class Hand
     : 'Meh.'
   end
 end
-
 byebug
-
-sample = Hand.new(["Ah", "2s", "3c", "5c", "4h"])
-sample.best_hand
+sample = Hand.new(["As", "Ks", "Qs", "Js", "Ts"])
+puts sample.best_hand
