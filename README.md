@@ -17,3 +17,6 @@ Other things to consider
   * Readability
   * Consistency
   * Encapsulation where appropriate
+  
+  Poker Hands
+  ![https://i.pinimg.com/originals/25/1b/7f/251b7fec75bbd621e06eeae9b35fbb87.png](https://i.pinimg.com/originals/25/1b/7f/251b7fec75bbd621e06eeae9b35fbb87.png)
