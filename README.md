@@ -18,5 +18,5 @@ Other things to consider
   * Consistency
   * Encapsulation where appropriate
   
-  Poker Hands
-  ![https://www.fgbradleys.com/images/poker_hands.gif](https://www.fgbradleys.com/images/poker_hands.gif)
+#### Poker Hands
+![https://www.fgbradleys.com/images/poker_hands.gif](https://www.fgbradleys.com/images/poker_hands.gif)
