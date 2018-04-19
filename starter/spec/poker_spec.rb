@@ -7,48 +7,48 @@ describe "Hand" do
   describe "#straight?" do
     it "identifies a straight" do
       hand = Hand.new(["As", "2h", "3c", "5h", "4d" ])
-      expect(hand.straight?).to be_truthy
+      expect(hand.straight?).to be true
     end
 
     it "doesn't have false positives" do
       hand = Hand.new(["Ac", "Js", "7c", "Ks", "4s" ])
-      expect(hand.straight?).to be_falsy
+      expect(hand.straight?).to be false
     end
   end
 
   describe "#flush?" do
     it "identifies a flush" do
       hand = Hand.new(["3s", "Js", "9s", "Ts", "4s" ])
-      expect(hand.flush?).to be_truthy
+      expect(hand.flush?).to be true
     end
 
     it "doesn't have false positives" do
       hand = Hand.new(["Ac", "Js", "7c", "Ks", "4s" ])
-      expect(hand.straight?).to be_falsy
+      expect(hand.straight?).to be false
     end
   end
 
   describe "#full_house?" do
     it "identifies a full house" do
       hand = Hand.new(["3s", "3h", "2d", "2c", "3c" ])
-      expect(hand.full_house?).to be_truthy
+      expect(hand.full_house?).to be true
     end
 
     it "doesn't have false positives" do
       hand = Hand.new(["3s", "3h", "3d", "2c", "3c" ])
-      expect(hand.full_house?).to be_falsy
+      expect(hand.full_house?).to be false
     end
   end
 
   describe "#four_of_a_kind?" do
     it "identifies a four of a kind" do
       hand = Hand.new(["3s", "3h", "3d", "2c", "3c" ])
-      expect(hand.four_of_a_kind?).to be_truthy
+      expect(hand.four_of_a_kind?).to be true
     end
 
     it "doesn't have false positives" do
       hand = Hand.new(["3s", "3h", "2d", "2c", "3c" ])
-      expect(hand.four_of_a_kind?).to be_falsy
+      expect(hand.four_of_a_kind?).to be false
     end
   end
 
