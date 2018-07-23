@@ -8,23 +8,46 @@ class Hand
 
     @cards.each do |mycard|
       value = mycard[0]
-      if value == "A"
-        card_values << 1
-      elsif value == "T"
-        card_values << 10
-      elsif value == "J"
-        card_values.push(11)
-      elsif value =="Q"
-        card_values << 12
-      elsif value == "K"
-        card_values.push(13)
-      else
-        card_values.push(value.to_i)
+      obj = {
+        "A" => 1,
+        "T" => 10,
+        "J" => 11,
+        "Q" => 12,
+        "K" => 13,
+      }
+
+      if obj[value]
+        card_values << obj[value]
+      else 
+        card_values << value.to_i
       end
+
+      # ================================
+      #     EITHER THE ABOVE OR BELOW
+      # ================================
+
+      # case value
+      #   when "A"
+      #     card_values << 1
+      #   when "T"
+      #     card_values << 10
+      #   when "J"
+      #     card_values << 11
+      #   when "Q"
+      #     card_values << 12
+      #   when "K"
+      #     card_values << 13
+      #   else
+      #     card_values << value.to_i
+      # end
+
+
     end
 
-    card_values
+    card_values.sort
   end
+
+  
 
   def suits
     card_suits = Array.new
@@ -37,7 +60,7 @@ class Hand
   end
 
   def straight?
-    ordered_values = values.sort
+    ordered_values = values
     is_straight = true
 
     ordered_values.each_with_index do |value, index| 
@@ -66,11 +89,11 @@ class Hand
   end
 
   def full_house?
-    ordered_values = values.sort
+    ordered_values = values
 
-    if values.count(ordered_values[0]) == 2 && values.count(ordered_values[-1]) == 3
+    if ordered_values.count(ordered_values[0]) == 2 && ordered_values.count(ordered_values[-1]) == 3
         true
-    elsif values.count(ordered_values[-1]) == 2 && values.count(ordered_values[0]) == 3
+    elsif ordered_values.count(ordered_values[-1]) == 2 && ordered_values.count(ordered_values[0]) == 3
         true
     else
       false
@@ -78,7 +101,7 @@ class Hand
   end
 
   def four_of_a_kind?
-    ordered_values = values.sort
+    ordered_values = values
 
     if ordered_values.count(ordered_values[0]) == 4 || ordered_values.count(ordered_values[-1]) == 4
       true
@@ -89,7 +112,7 @@ class Hand
   end
 
   def best_hand
-    
+
     if straight? && flush?
       "Straight Flush"
     elsif four_of_a_kind?
